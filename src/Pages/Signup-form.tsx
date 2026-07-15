@@ -1,5 +1,5 @@
 import { Controller, useForm } from "react-hook-form"
-import { signupSchema, signupSchemawithRefine, type signupSchemaType } from "./Signup-schema"
+import { signupSchema, type signupSchemaType } from "./Signup-schema"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Field, FieldError,  FieldLabel } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
@@ -8,7 +8,7 @@ import { Form } from "react-router-dom"
 
 export default function SignupForm() {
     const form= useForm<signupSchemaType>({
-        resolver: zodResolver(signupSchemawithRefine),
+        resolver: zodResolver(signupSchema),
         defaultValues: {
             firstname: "",
             lastname: "",
